@@ -20,15 +20,10 @@ const apiEndpoint = "api.consumet.org";
 
 // Randomly set player iframes to these video onLoad
 var youtubeLinks = [
-    "https://www.youtube.com/embed/3yOVIxOHiaw",
-    "https://www.youtube.com/embed/nfAPAvGGH4g",
-    "https://www.youtube.com/embed/S7W135mNveI",
-    "https://www.youtube.com/embed/X1M69l7ZGlw",
-    "https://www.youtube.com/embed/IUtFAblCT1o",
-    "https://www.youtube.com/embed/Wi6tTATXnaw",
-    "https://www.youtube.com/embed/5xkzzO5nNow",
-    "https://www.youtube.com/embed/PgAswqBtrUk",
-    "https://www.youtube.com/embed/uwwU55zBYlQ"
+    "https://www.youtube-nocookie.com/embed/9vIxi5XkQ8Y",
+    "https://www.youtube-nocookie.com/embed/45lyCUdzRx4",
+    "https://www.youtube-nocookie.com/embed/c-yZsNd__0E",
+    "https://www.youtube-nocookie.com/embed/5pTcio2hTSw"
 ];
 var randomLink = youtubeLinks[Math.floor(Math.random() * youtubeLinks.length)];
 videoPlayer.src = randomLink;
@@ -55,7 +50,7 @@ searchBtn.addEventListener("click", async function () {
     sresultContainer.style.display = `flex`;
     resultContainer.style.display = `grid`;
     mainLoading.style.display = "flex";
-    pageTitle.innerHTML = `astream - watch anime`
+    pageTitle.innerHTML = `Ryzendesu - watch anime`
     recentBtn.style.display = "none";
     resultContainer.innerHTML = "";
 
@@ -74,7 +69,7 @@ async function getSearchByEnter(event) {
         sresultContainer.style.display = `flex`;
         resultContainer.style.display = `grid`;
         mainLoading.style.display = "flex";
-        pageTitle.innerHTML = `astream - watch anime`
+        pageTitle.innerHTML = `Ryzendesu - watch anime`
         recentBtn.style.display = "none";
         resultContainer.innerHTML = "";
 
@@ -211,7 +206,7 @@ function displayAnimeInfo(data) {
     const title = document.getElementById("videoTitle");
     title.innerHTML = `${data.title}`;
     dataTitle = `${data.title}`;
-    pageTitle.innerHTML = `${data.title.toLowerCase()} - astream`
+    pageTitle.innerHTML = `${data.title.toLowerCase()} - Ryzendesu`
 
     const status = document.getElementById("status");
     status.innerHTML = `${data.status}`;
@@ -294,8 +289,8 @@ function displayWatchInfo(episodeData) {
 // Donate Alert
 const spanElement = document.getElementById("spanDonate");
 let contentDonate = [
-    "<span>Support this website by making a donation starting from 1$!</span><a href='https://sociabuzz.com/willydev/tribe' target='_blank' title='Thank you!'>DONATE</a>",
-    "<span>Dukung website ini dengan cara berdonasi mulai dari Rp1000!</span><a href='https://sociabuzz.com/willydev/tribe' target='_blank' title='Thank you!'>DONASI</a>"
+    "<span>Support this website by making a donation starting from 1$!</span><a href='#' target='_blank' title='Thank you!'>DONATE</a>",
+    "<span>Dukung website ini dengan cara berdonasi mulai dari Rp1000!</span><a href='#' target='_blank' title='Thank you!'>DONASI</a>"
 ];
 let indexDonate = 0;
 setInterval(function () {
