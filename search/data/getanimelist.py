@@ -5,7 +5,7 @@ import requests
 import json
 import time
 
-url_template = "https://animoasa.glitch.me/animelist/{}"
+url_template = "https://gogoanime3.co/anime-list.html/animelist/{}"
 start_num = 1
 end_num = 91
 animelist = []
