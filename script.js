@@ -16,7 +16,7 @@ var dataTitle;
 var dataEpisode;
 var dataURL;
 
-const apiEndpoint = "https://api-test-blond-mu.vercel.app";
+
 
 // Randomly set player iframes to these video onLoad
 var youtubeLinks = [
@@ -57,7 +57,7 @@ searchBtn.addEventListener("click", async function () {
     updateUrl(`/`);
 
     const query = queryInput.value;
-    const res = await fetch(`https://${apiEndpoint}/anime/gogoanime/${query}?page=1`);
+    const res = await fetch(`https://api-test-blond-mu.vercel.app/anime/gogoanime/${query}?page=1`);
     const data = await res.json();
     displayResults(data.results);
 });
@@ -76,7 +76,7 @@ async function getSearchByEnter(event) {
         updateUrl(`/`);
 
         const query = queryInput.value;
-        const res = await fetch(`https://${apiEndpoint}/anime/gogoanime/${query}?page=1`);
+        const res = await fetch(`https://api-test-blond-mu.vercel.app/anime/gogoanime/${query}?page=1`);
         const data = await res.json();
         displayResults(data.results);
     }
@@ -99,7 +99,7 @@ recentBtn.addEventListener("click", async function () {
     mainLoading.style.display = "flex";
     recentBtn.style.display = "none";
 
-    const res = await fetch(`https://${apiEndpoint}/anime/gogoanime/recent-episodes`);
+    const res = await fetch(`https://api-test-blond-mu.vercel.app/anime/gogoanime/recent-episodes`);
     const data = await res.json();
     displayRecent(data.results);
 });
@@ -134,7 +134,7 @@ function displayRecent(results) {
             updateUrl(`/?anime=${result.id}`);
             dataURL = `${result.id}`
 
-            const res = await fetch(`https://${apiEndpoint}/anime/gogoanime/info/${result.id}`);
+            const res = await fetch(`https://api-test-blond-mu.vercel.app/anime/gogoanime/info/${result.id}`);
             const data = await res.json();
             displayAnimeInfo(data);
         });
@@ -170,7 +170,7 @@ function displayResults(results) {
             updateUrl(`/?anime=${result.id}`);
             dataURL = `${result.id}`
 
-            const res = await fetch(`https://${apiEndpoint}/anime/gogoanime/info/${result.id}`);
+            const res = await fetch(`https://api-test-blond-mu.vercel.app/anime/gogoanime/info/${result.id}`);
             const data = await res.json();
             displayAnimeInfo(data);
         });
@@ -188,7 +188,7 @@ async function fetchAnimeInfo() {
 
         dataURL = `${animeParam}`
 
-        const res = await fetch(`https://${apiEndpoint}/anime/gogoanime/info/${animeParam}`);
+        const res = await fetch(`https://api-test-blond-mu.vercel.app/anime/gogoanime/info/${animeParam}`);
         const data = await res.json();
         displayAnimeInfo(data);
     }
@@ -243,7 +243,7 @@ function displayAnimeInfo(data) {
         addHistory();
 
         const episodeId = document.getElementById("selectElement").value;
-        const res = await fetch(`https://${apiEndpoint}/anime/gogoanime/watch/${episodeId}`);
+        const res = await fetch(`https://api-test-blond-mu.vercel.app/anime/gogoanime/watch/${episodeId}`);
         const episodeData = await res.json();
         displayWatchInfo(episodeData);
     });
